@@ -11,4 +11,4 @@ Extracts book titles and prices from [book website](https://books.toscrape.com/)
 </ul>
 
 <h2>How to run</h2>
-Run "python scrapper.py" command in the terminal
+Enter to .py file directory and run "python scrapper.py" command in the terminal
