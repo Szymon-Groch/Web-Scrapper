@@ -1,7 +1,7 @@
 import requests
 from bs4 import BeautifulSoup
 
-# UR
+# URL
 url = 'https://books.toscrape.com/'
 response = requests.get(url)
 
