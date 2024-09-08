@@ -1,17 +1,35 @@
 import requests
 from bs4 import BeautifulSoup
 
-# url
+# UR
 url = 'https://books.toscrape.com/'
 response = requests.get(url)
 
 
-soup = BeautifulSoup(response.text, 'html.parser')
+if response.status_code == 200:
 
-# target - prices
-product_price_divs = soup.find_all('div', class_='product_price')
+    soup = BeautifulSoup(response.text, 'html.parser')
 
-# Extract and print the content of each div
-for div in product_price_divs:
-    print(div.text.strip())
+    #prices
+    product_price_divs = soup.find_all('div', class_='product_price')
 
+    #book titles
+    h3_tags = soup.find_all('h3')
+
+
+    combined_content = []
+
+    #Extracting found element together for printing
+    for h3 in h3_tags:
+        combined_content.append(f"Heading: {h3.text.strip()}")
+
+
+    for div in product_price_divs:
+        combined_content.append(f"Product Price: {div.text.strip()}")
+
+    #Print 
+    for content in combined_content:
+        print(content)
+
+else:
+    print(f"Failed to retrieve the page. Status code: {response.status_code}")
