@@ -5,8 +5,10 @@
 Extracts book titles and prices from [book website](https://books.toscrape.com/)
 
 <h2>Used libraries</h2>
-- requests - HTTP requests
-- BeautifulSoup - parse and navigate HTML or XML document in order to get target data from websites
+<ul>
+<li> requests - HTTP requests
+<li> BeautifulSoup - parse and navigate HTML or XML document in order to get target data from websites
+</ul>
 
 <h2>How to run</h2>
 Run "python scrapper.py" command in the terminal
